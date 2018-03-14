@@ -36,3 +36,8 @@ body {
 	bottom:0; 
 	height:60px;
 }
+
+.active, .btn:hover {
+  background-color: #666;
+  color: blue;
+}
