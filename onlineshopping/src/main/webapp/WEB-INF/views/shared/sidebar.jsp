@@ -1,4 +1,4 @@
-<h1 class="my-4">Shop Name</h1>
+<p class="lead">Online Shopping</p>
 <div class="list-group">
 
 	<c:forEach items="${categories}" var="category">

@@ -4,8 +4,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <spring:url var="css" value="/resources/css" />
-<spring:url var="js" value="/resources/js" />
-<spring:url var="images" value="/resources/images" />
+
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath }" />
 
@@ -45,41 +44,39 @@
 <body>
 
     <div class="wrapper">
-		<!-- Navigation -->
-		<%@include file="./shared/navbar.jsp"%>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                 <a class="navbar-brand" href="${contextRoot}/home">Home</a>
+            </div>
+         </div>
+         </nav>   
 		<!-- Page Content -->
 		<div class="content">
-			<c:if test="${userClickHome == true }">
-				<%@include file="home.jsp"%>
-			</c:if>
-			<c:if test="${userClickAboutUs == true }">
-				<%@include file="aboutUs.jsp"%>
-			</c:if>
-			<c:if test="${userClickContactUs == true }">
-				<%@include file="contactUs.jsp"%>
-			</c:if>
-			<c:if test="${userClickAllProducts == true }">
-				<%@include file="listProducts.jsp"%>
-			</c:if>
-			<c:if test="${userClickCategoryProducts == true }">
-				<%@include file="listProducts.jsp"%>
-			</c:if>
-			<c:if test="${userClickShowProduct == true }">
-				<%@include file="singleProduct.jsp"%>
-			</c:if>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="jumbotron">
+							<h1>${errorTitle}</h1>
+							<hr/>
+							
+							<blockquote style="word-wrap:break-word">
+								${errorDescription}
+							</blockquote>
+						
+						
+						</div>
+					
+					
+					</div>
+				</div>
+			
+			</div>
 		</div>
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
 
-		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/jquery.js"></script>
-		<script src="${js}/bootstrap.js"></script>
-		<!-- DataTable plugin -->
-		<script src="${js}/jquery.dataTables.js"></script>
-		<!-- DataTable Bootstrap Script-->
-		<script src="${js}/dataTables.bootstrap.js"></script>
-		<!-- self coded javascript -->
-		<script src="${js}/myapp.js"></script>
+		
 	</div>
 </body>
 
